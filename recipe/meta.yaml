@@ -1,5 +1,5 @@
 {% set name = "upliftml" %}
-{% set version = "0.0.1" %}
+{% set version = "0.0.2" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/upliftml-{{ version }}.tar.gz
-  sha256: 060a3cf3deceaa7211200f9386e20fbde9d66acf4f4de676a6ba60548206bdbd
+  sha256: 612cb7fa1d57c5f7cfce9cc8bd2b39dfdda4acccaace070c67751082b0707811
 
 build:
   number: 0
