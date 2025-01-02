@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/upliftml-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/upliftml-{{ version }}.tar.gz
   sha256: 612cb7fa1d57c5f7cfce9cc8bd2b39dfdda4acccaace070c67751082b0707811
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script:
     # Removing pyproject.toml here due to pip bug
@@ -22,13 +22,13 @@ requirements:
   host:
     - pip
     - poetry-core >=1.0.0
-    - python >=3.7.1,<4.0.0
+    - python {{ python_min }}
   run:
     - matplotlib-base >=3.4.0,<4.0.0
     - numpy >=1.20.1,<2.0.0
     - pandas ==1.3.5
     - pydantic >=1.8,<2.0
-    - python >=3.7.1,<4.0.0
+    - python >={{ python_min }},<4.0.0
     - scikit-learn >=0.24,<0.25
     - seaborn >=0.11.1,<0.12.0
 
@@ -39,6 +39,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/bookingcom/upliftml
